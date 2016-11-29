@@ -1,8 +1,0 @@
-packages/google-cloud/README.md
-packages/*/AUTHORS
-packages/*/CONTRIBUTORS
-packages/*/COPYING
-**/node_modules
-**/coverage/*
-docs/json
-*.log

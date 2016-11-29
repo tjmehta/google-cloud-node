@@ -1,50 +1,67 @@
 {
-  "name": "google-cloud-node",
-  "private": "true",
-  "devDependencies": {
-    "array-uniq": "^1.0.3",
-    "async": "^2.0.1",
-    "chalk": "^1.1.3",
-    "coveralls": "^2.11.2",
-    "create-error-class": "^3.0.2",
-    "david": "^9.0.0",
-    "dox": "0.8.1",
+  "repository": "googlecloudplatform/google-cloud-node",
+  "name": "@google-cloud/monitoring",
+  "version": "0.1.2",
+  "author": "Google Inc.",
+  "description": "Stackdriver Monitoring Client Library for Node.js",
+  "contributors": [
+    {
+      "name": "Burcu Dogan",
+      "email": "jbd@google.com"
+    },
+    {
+      "name": "Johan Euphrosine",
+      "email": "proppy@google.com"
+    },
+    {
+      "name": "Patrick Costello",
+      "email": "pcostell@google.com"
+    },
+    {
+      "name": "Ryan Seys",
+      "email": "ryan@ryanseys.com"
+    },
+    {
+      "name": "Silvano Luciani",
+      "email": "silvano@google.com"
+    },
+    {
+      "name": "Stephen Sawchuk",
+      "email": "sawchuk@gmail.com"
+    }
+  ],
+  "main": "src/index.js",
+  "files": [
+    "src",
+    "AUTHORS",
+    "CONTRIBUTING",
+    "COPYING"
+  ],
+  "keywords": [
+    "google apis client",
+    "google api client",
+    "google apis",
+    "google api",
+    "google",
+    "google cloud platform",
+    "google cloud",
+    "cloud",
+    "google monitoring",
+    "monitoring",
+    "stackdriver monitoring",
+    "stackdriver"
+  ],
+  "dependencies": {
     "extend": "^3.0.0",
-    "glob": "^5.0.9",
-    "globby": "^3.0.1",
-    "is": "^3.1.0",
-    "istanbul": "^0.3.5",
-    "jscs": "^2.1.1",
-    "jshint": "^2.9.1",
-    "lodash.flatten": "^4.3.0",
-    "lodash.template": "^4.3.0",
-    "mitm": "^1.1.0",
-    "mkdirp": "^0.5.1",
-    "mocha": "^2.5.3",
-    "multiline": "^1.0.2",
-    "package-json": "^2.4.0",
-    "propprop": "^0.3.1",
-    "proxyquire": "^1.7.10",
-    "request": "^2.70.0",
-    "semver": "^5.3.0",
-    "shelljs": "^0.7.3",
-    "string-format-obj": "^1.0.0",
-    "through2": "^2.0.0"
+    "google-gax": "^0.10.0",
+    "google-proto-files": "^0.8.3"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
   },
   "scripts": {
-    "postinstall": "node ./scripts/install.js",
-    "link-common": "node ./scripts/link-common.js",
-    "update-deps": "node ./scripts/update-deps.js",
-    "docs": "node ./scripts/docs",
-    "prepare-ghpages": "node ./scripts/docs/prepare.js",
-    "remove-ghpages": "node ./scripts/docs/remove.js",
-    "lint": "jshint scripts/ packages/ system-test/ test/ && jscs packages/ system-test/ test/",
-    "test": "npm run unit-test && npm run docs && npm run snippet-test",
-    "unit-test": "mocha --timeout 5000 --bail packages/*/test/*.js",
-    "snippet-test": "mocha --timeout 5000 --bail test/docs.js",
-    "system-test": "mocha packages/*/system-test/*.js --no-timeouts --bail",
-    "cover": "istanbul cover _mocha --report lcovonly -x 'packages/*/src/v*/*.js' -- --no-timeouts --bail packages/*/test/*.js -R spec",
-    "coveralls": "npm run cover && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "publish-module": "node ../../scripts/publish.js monitoring",
+    "test": "mocha test/*.js"
   },
   "license": "Apache-2.0",
   "engines": {
